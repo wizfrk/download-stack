@@ -64,6 +64,8 @@ services:
       - '${CONFIG}/lidarr:/config'
       - '${MEDIA}/music:/music'
       - '${DOWNLOADS}/completed/music:/downloads'
+    ports:
+      - 8686:8686
   lazylibrarian:
     image: linuxserver/lazylibrarian:latest
     restart: unless-stopped
