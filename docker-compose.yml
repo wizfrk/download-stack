@@ -4,6 +4,11 @@ version: '3'
 services:
   hydra2:
     image: linuxserver/hydra2:latest
+    restart: unless-stopped
+    enviorment:
+      - 'PUID=${PIUD}'
+      - 'PGID=${PGID}'
+      - 'TZ=${TZ}'
     volumes:
       - '${CONFIG}/hydra2:/config'
       - '${DOWNLOADS}/watched:/downloads'
@@ -11,13 +16,24 @@ services:
       - 5076:5076
   jackett:
     image: linuxserver/jackett:latest
+    restart: unless-stopped
+    enviorment:
+      - 'PUID=${PIUD}'
+      - 'PGID=${PGID}'
+      - 'TZ=${TZ}'
     volumes:
+      - '/etc/localtime:/etc/localtime:ro'
       - '${CONFIG}/jackett:/config'
       - '${DOWNLOADS}/watched:/downloads'
     ports:
       - 9117:9117
   sonarr:
     image: linuxserver/sonarr:latest
+    restart: unless-stopped
+    enviorment:
+      - 'PUID=${PIUD}'
+      - 'PGID=${PGID}'
+      - 'TZ=${TZ}'
     volumes:
       - '${CONFIG}/sonarr:/config'
       - '${MEDIA}/tv:/tv'
@@ -26,6 +42,11 @@ services:
       - 8989:8989
   radarr:
     image: linuxserver/radarr:latest
+    restart: unless-stopped
+    enviorment:
+      - 'PUID=${PIUD}'
+      - 'PGID=${PGID}'
+      - 'TZ=${TZ}'
     volumes:
       - '${CONFIG}/radarr:/config'
       - '${MEDIA}/movies:/movies'
@@ -34,26 +55,59 @@ services:
       - 7878:7878
   lidarr:
     image: linuxserver/lidarr:latest
+    restart: unless-stopped
+    enviorment:
+      - 'PUID=${PIUD}'
+      - 'PGID=${PGID}'
+      - 'TZ=${TZ}'
     volumes:
       - '${CONFIG}/lidarr:/config'
       - '${MEDIA}/music:/music'
       - '${DOWNLOADS}/completed/music:/downloads'
   lazylibrarian:
     image: linuxserver/lazylibrarian:latest
+    restart: unless-stopped
+    enviorment:
+      - 'PUID=${PIUD}'
+      - 'PGID=${PGID}'
+      - 'TZ=${TZ}'
     volumes:
       - '${CONFIG}/lazylibrarian:/config'
       - '${MEDIA}/books:/books'
       - '${DOWNLOADS}/completed/books:/downloads'
     ports:
       - 5299:5299
+  mylar:
+    image: lsioarmhf/mylar:latest
+    restart: unless-stopped
+    enviorment:
+      - 'PUID=${PIUD}'
+      - 'PGID=${PGID}'
+      - 'TZ=${TZ}'
+    volumes:
+      - '${CONFIG}/mylar:/config'
+      - '${MEDIA}/comics:/comics'
+      - '${DOWNLOADS}/completed/comics:/downloads'
+    ports:
+      - 8090:8090
   ombi:
     image: linuxserver/ombi:latest
+    restart: unless-stopped
+    enviorment:
+      - 'PUID=${PIUD}'
+      - 'PGID=${PGID}'
+      - 'TZ=${TZ}'
     volumes:
       - '${CONFIG}/ombi:/config'
     ports:
       - 3579:3579
   sabnzbd:
     image: lsioarmhf/sabnzbd:latest
+    restart: unless-stopped
+    enviorment:
+      - 'PUID=${PIUD}'
+      - 'PGID=${PGID}'
+      - 'TZ=${TZ}'
     volumes:
       - '${CONFIG}/sabnzdb:/config'
       - '${DOWNLOADS}:/downloads'
@@ -63,6 +117,11 @@ services:
       - 9090:9090
   rutorrent:
     image: linuxserver/rutorrent:latest
+    restart: unless-stopped
+    enviorment:
+      - 'PUID=${PIUD}'
+      - 'PGID=${PGID}'
+      - 'TZ=${TZ}'
     volumes:
       - "${CONFIG}/rutorrent:/config"
       - "${DOWNLOADS}:/downloads"
