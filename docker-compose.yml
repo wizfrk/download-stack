@@ -20,7 +20,7 @@ services:
     image: linuxserver/sonarr:latest
     volumes:
       - '${CONFIG}/sonarr:/config'
-      - '${MEDIA}/tv$:/tv'
+      - '${MEDIA}/tv:/tv'
       - '${DOWNLOADS}/completed/tv/downloads'
     ports:
       - 8989:8989
