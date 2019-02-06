@@ -123,8 +123,8 @@ services:
       - 'PGID=${PGID}'
       - 'TZ=${TZ}'
     volumes:
-      - "${CONFIG}/rutorrent:/config"
-      - "${DOWNLOADS}:/downloads"
+      - '${CONFIG}/rutorrent:/config'
+      - '${DOWNLOADS}:/downloads'
     ports:
       - 6881:6881/udp
       - 51413:51413
