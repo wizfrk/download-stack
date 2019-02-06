@@ -5,7 +5,7 @@ services:
   hydra2:
     image: linuxserver/hydra2:latest
     restart: unless-stopped
-    enviorment:
+    environment:
       - 'PUID=${PIUD}'
       - 'PGID=${PGID}'
       - 'TZ=${TZ}'
@@ -17,7 +17,7 @@ services:
   jackett:
     image: linuxserver/jackett:latest
     restart: unless-stopped
-    enviorment:
+    environment:
       - 'PUID=${PIUD}'
       - 'PGID=${PGID}'
       - 'TZ=${TZ}'
@@ -30,7 +30,7 @@ services:
   sonarr:
     image: linuxserver/sonarr:latest
     restart: unless-stopped
-    enviorment:
+    environment:
       - 'PUID=${PIUD}'
       - 'PGID=${PGID}'
       - 'TZ=${TZ}'
@@ -43,7 +43,7 @@ services:
   radarr:
     image: linuxserver/radarr:latest
     restart: unless-stopped
-    enviorment:
+    environment:
       - 'PUID=${PIUD}'
       - 'PGID=${PGID}'
       - 'TZ=${TZ}'
@@ -56,7 +56,7 @@ services:
   lidarr:
     image: linuxserver/lidarr:latest
     restart: unless-stopped
-    enviorment:
+    environment:
       - 'PUID=${PIUD}'
       - 'PGID=${PGID}'
       - 'TZ=${TZ}'
@@ -67,7 +67,7 @@ services:
   lazylibrarian:
     image: linuxserver/lazylibrarian:latest
     restart: unless-stopped
-    enviorment:
+    environment:
       - 'PUID=${PIUD}'
       - 'PGID=${PGID}'
       - 'TZ=${TZ}'
@@ -80,7 +80,7 @@ services:
   mylar:
     image: lsioarmhf/mylar:latest
     restart: unless-stopped
-    enviorment:
+    environment:
       - 'PUID=${PIUD}'
       - 'PGID=${PGID}'
       - 'TZ=${TZ}'
@@ -93,7 +93,7 @@ services:
   ombi:
     image: linuxserver/ombi:latest
     restart: unless-stopped
-    enviorment:
+    environment:
       - 'PUID=${PIUD}'
       - 'PGID=${PGID}'
       - 'TZ=${TZ}'
@@ -104,7 +104,7 @@ services:
   sabnzbd:
     image: lsioarmhf/sabnzbd:latest
     restart: unless-stopped
-    enviorment:
+    environment:
       - 'PUID=${PIUD}'
       - 'PGID=${PGID}'
       - 'TZ=${TZ}'
@@ -118,7 +118,7 @@ services:
   rutorrent:
     image: linuxserver/rutorrent:latest
     restart: unless-stopped
-    enviorment:
+    environment:
       - 'PUID=${PIUD}'
       - 'PGID=${PGID}'
       - 'TZ=${TZ}'
