@@ -3,14 +3,14 @@ version: '3'
 
 services:
   hydra2:
-    image: linuxserver/hydra2
+    image: linuxserver/hydra2:latest
     volumes:
       - '${CONFIG}/hydra2:/config'
       - '${DOWNLOADS}/watched:/downloads'
     ports:
       - 5076:5076
   jackett:
-    image: linuxserver/jackett
+    image: linuxserver/jackett:latest
     volumes:
       - '${CONFIG}/jackett:/config'
       - '${DOWNLOADS}/watched:/downloads'
@@ -53,7 +53,7 @@ services:
     ports:
       - 3579:3579
   sabnzbd:
-    image: lsioarmhf/sabnzbd
+    image: lsioarmhf/sabnzbd:latest
     volumes:
       - '${CONFIG}/sabnzdb:/config'
       - '${DOWNLOADS}:/downloads'
@@ -62,7 +62,7 @@ services:
       - 8080:8080
       - 9090:9090
   rutorrent:
-    image: linuxserver/rutorrent
+    image: linuxserver/rutorrent:latest
     volumes:
       - "${CONFIG}/rutorrent:/config"
       - "${DOWNLOADS}:/downloads"
