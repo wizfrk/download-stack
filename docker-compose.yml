@@ -127,6 +127,7 @@ services:
     volumes:
       - '${CONFIG}/rutorrent:/config'
       - '${DOWNLOADS}:/downloads'
+      - '${MEDIA}:/media'
     ports:
       - 6881:6881/udp
       - 51413:51413
