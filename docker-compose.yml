@@ -40,6 +40,19 @@ services:
       - '${DOWNLOADS}/completed/tv:/downloads'
     ports:
       - 8989:8989
+  animerr:
+    image: linuxserver/sonarr:latest
+    restart: unless-stopped
+    environment:
+      - 'PUID=${PIUD}'
+      - 'PGID=${PGID}'
+      - 'TZ=${TZ}'
+    volumes:
+      - '${CONFIG}/sonarr-anime:/config'
+      - '${MEDIA}/anime:/tv'
+      - '${DOWNLOADS}/completed/anime:/downloads'
+    ports:
+      - 8989:8989
   radarr:
     image: linuxserver/radarr:latest
     restart: unless-stopped
